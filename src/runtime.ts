@@ -109,7 +109,7 @@ class Module {
 
   #requireFromWithinModule(toPath: string) {
     if (!toPath.match(/^[./]/)) {
-      return require(toPath);
+      return require!.main!.require(toPath);
     }
 
     const file = this.file.parent.find(toPath);
