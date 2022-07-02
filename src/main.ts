@@ -16,11 +16,13 @@ const formatter = new Intl.DateTimeFormat('en-US', {
   fractionalSecondDigits: 3,
 } as Intl.DateTimeFormatOptions & { fractionalSecondDigits?: 0 | 1 | 2 | 3 });
 
-wrapLog('log');
-wrapLog('error');
+export function startSite(appDir: string) {
+  wrapLog('log');
+  wrapLog('error');
 
-const site = new Site('app');
-onFsChanges('app', 100, (path) => site.fileChanged(path));
+  const site = new Site('app');
+  onFsChanges('app', 100, (path) => site.fileChanged(path));
+}
 
 function onFsChanges(fromPath: string, msTimeout: number, fn: (path: string) => void) {
   let timeout: NodeJS.Timeout | null = null;
