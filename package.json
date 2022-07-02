@@ -2,7 +2,7 @@
   "name": "tsr",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "out/main.js",
   "scripts": {
     "build": "tsc --build",
     "watch": "tsc --build --watch",
